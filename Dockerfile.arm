@@ -1,0 +1,6 @@
+FROM alpine:latest
+RUN apk add docker-cli && \
+    wget https://github.com/smallstep/cli/releases/download/v0.15.7/step_linux_0.15.7_arm64.tar.gz && \
+    tar xzf step_linux_0.15.7_arm64.tar.gz && \
+    chmod +x step_0.15.7/bin/step && \
+    ln -s /step_0.15.7/bin/step /usr/local/bin/step
