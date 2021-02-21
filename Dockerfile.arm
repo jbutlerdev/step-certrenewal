@@ -4,3 +4,5 @@ RUN apk add docker-cli && \
     tar xzf step_linux_0.15.7_arm64.tar.gz && \
     chmod +x step_0.15.7/bin/step && \
     ln -s /step_0.15.7/bin/step /usr/local/bin/step
+COPY entrypoint.sh .
+ENTRYPOINT ["./entrypoint.sh"]
