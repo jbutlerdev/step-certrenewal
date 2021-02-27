@@ -3,3 +3,5 @@ RUN wget https://github.com/smallstep/cli/releases/download/v0.15.7/step_linux_0
     tar xzf step_linux_0.15.7_amd64.tar.gz && \
     chmod +x step_0.15.7/bin/step && \
     ln -s /step_0.15.7/bin/step /usr/local/bin/step
+COPY entrypoint.sh .
+ENTRYPOINT ["./entrypoint.sh"]
