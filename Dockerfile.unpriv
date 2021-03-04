@@ -4,5 +4,8 @@ RUN apk add docker-cli && \
     tar xzf step_linux_0.15.7_amd64.tar.gz && \
     chmod +x step_0.15.7/bin/step && \
     ln -s /step_0.15.7/bin/step /usr/local/bin/step
+RUN addgroup -g 102 docker && \
+    adduser -Du 1000 unpriv && \
+    addgroup unpriv docker
 COPY entrypoint.sh .
 ENTRYPOINT ["./entrypoint.sh"]
